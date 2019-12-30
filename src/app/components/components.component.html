@@ -1,0 +1,30 @@
+<div nz-row nzGutter="0">
+  <div nz-col nzSpan="20" nzOffset="2">
+      <nz-table   nzBordered #ajaxTable nzShowSizeChanger [nzFrontPagination]="false" [nzData]="tableDatas" [nzLoading]="loading"
+      [nzTotal]="totalItems" [(nzPageIndex)]="currentPage" [(nzPageSize)]="itemsPerpage" (nzPageIndexChange)="getData()" (nzPageSizeChange)="getData()">
+      <thead >
+        <tr>
+          <th appDynamicColumnWidth>ID</th>
+          <th appDynamicColumnWidth>Name</th>
+          <th appDynamicColumnWidth>Gender</th>
+          <th appDynamicColumnWidth>Age</th>
+        </tr>
+      </thead>
+      <tbody >
+        <tr *ngFor="let data of ajaxTable.data">
+          <td>{{data.id}}</td>
+          <td>{{data.name}}</td>
+          <td>{{data.gender}}</td>
+          <td>{{data.age}}</td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+  <div nz-col nzSpan="2">
+
+  </div>
+</div>
+
+
+
+<br><br>
